@@ -1,0 +1,30 @@
+:root
+{
+    --fundo-escuro: #2b2741;
+    --letra-clara:white;
+    --fundo-claro:white;
+    --letra-escura:black;
+    --sombra-1:#8febd5;
+    --sombra-2:
+
+}
+
+html, main
+{
+    width: 100%;
+    height: 100%;
+}
+
+main
+{
+
+}
+
+header
+{
+    position: sticky;
+    top: 0;
+    background-color: #2b2741;
+    z-index: 100;
+    color:var(--letra-clara)
+}
