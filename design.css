@@ -1,145 +1,231 @@
-:root
-{
-    --fundo-escuro: ;
-    --letra-clara:white;
-    --fundo-claro:rgb(228, 228, 228);
-    --fundo-cinza:#2C3642;
-    --fundo-azul:#048bc2
-    --letra-escura:black;
+@import url('https://fonts.googleapis.com/css2?family=Alumni+Sans+Pinstripe:ital@0;1&family=Birthstone&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Poiret+One&display=swap');
+
+:root {
+    --fundo-escuro: #1a1a1a;
+    --letra-clara: white;
+    --fundo-claro: rgb(228, 228, 228);
+    --fundo-cinza: #2C3642;
+    --fundo-azul: #2f80fa;
+    --letra-escura: black;
+    --fonte-nome: "Poiret One", sans-serif;
+    --fonte-titulo: "Merriweather", serif;
+    --fonte-texto: "Alumni Sans Pinstripe", sans-serif;
+    --fonte-links:"Birthstone", cursive;
 }
 
-html, body, main
-{
+html, body, main {
     width: 100%;
     height: 100%;
     margin: 0;
     padding: 0;
-
 }
 
-main
-{
-    display: flexbox;
-    margin-top: 60px;
+main {
+    display: flex;
     flex-direction: column;
-}
-.menu-fixo 
-{
-  position: fixed;
-  top: 0;
-  background-color: #212834;
-  z-index: 100;
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
-
+    margin-top: 50px;
 }
 
-.lista_menu
-{
+.menu-fixo {
+    position: fixed;
+    top: 0;
+    background-color: #212834;
+    z-index: 100;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    font-family: var(--fonte-nome);
+    letter-spacing: 4px;
+    margin: 0;
+    padding: 0;
+}
+
+.lista_menu {
     list-style: none;
     display: flex;
     flex-wrap: wrap;
     justify-content: left;
-    gap: 20px;    
+    gap: 20px;
 }
 
-.item
-{
+.item {
     text-decoration: none;
     color: var(--letra-clara);
-    cursor:pointer;
+    cursor: pointer;
     padding: 10px;
+    transition: color 0.3s ease-in-out;
 }
 
-.item:hover
-{
+.item:hover {
     color: rgba(191, 145, 43);
-    transition: 0.3s color ease-in-out;
 }
 
-.lateral
-{
+.lateral {
     position: fixed;
     background-color: var(--fundo-cinza);
-    padding: 20px;
     width: 21%;
+    height: 100%;
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
+    font-family: var(--fonte-texto);
+    letter-spacing: 1px;
+    font-size: 1.1em;
+    gap: 10px;
 }
 
-.lateral h3
-{
-    margin:0;
-}
-.foto
-{
-    width: 90%;
+.foto {
+    width: 100%;
     height: auto;
     display: block;
-    justify-self: center;
-    padding-top: 20px;
-    
+    margin: 0;
+    padding: 0;
 }
 
-h1, h2
-{
-    scroll-margin-top: 60px;
+h1 {
+    color: var(--letra-escura);
+    font-family: var(--fonte-nome);
+    letter-spacing: 4px;
 }
 
-.redes_sociais
-{
+h2 {
+    scroll-margin-top: 80px;
+    font-family: var(--fonte-titulo);
+    margin: 0;
+    padding: 0;
+}
+
+.redes_sociais {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;   
-    align-items: center;       
-    gap: 10px;                 
-    padding-top: 10px;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
     padding: 0;
     margin: 0;
-    
-    
 }
 
-.redes_sociais li
-{
+.redes_sociais li {
     list-style: none;
     margin: 0;
     padding: 0;
     display: flex;
-    justify-content: center;
-    align-items: center;
-   
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    
 }
 
-.rede_social1
-{
-    width: 50px;
-    height: 50px;
-}
-
-.rede_social2
-{
-    width: 50px;
-    height: 50px;
-}
-
-.rede_social3
-{
-    width:35px;
-    height:35px;
-}
-
-#phone, #email, #local
-{
+#instagram_logo,
+#linkedin_logo,
+#github_logo {
+    width: 40px;
+    height: 40px;
+    padding: 0;
     margin: 0;
 }
 
-.texto
-{
-    padding-left: 28%;
-    padding-top: 3%;
+#links {
+    margin: 0;
+    padding: 0 5% ;
 }
+
+#phone,
+#email,
+#local {
+    display: flex;
+    margin-top: 10px;
+    width: 100%;
+}
+
+.lateral a {
+    text-decoration: none;
+    color: var(--letra-clara);
+    cursor: pointer;
+    transition: color 0.3s ease-in-out;
+    align-self: center;
+}
+
+.lateral a:hover {
+    color: rgba(191, 145, 43);
+}
+
+.texto {
+    padding-left: 21%;
+}
+
+#apresentacao {
+    background-color: var(--fundo-azul);
+    display: flex;
+    flex-wrap: wrap;   
+    justify-content: center;
+    padding: 10px;
+    
+}
+
+#principal
+{
+    width: 100%;
+    display: inline-block;
+    justify-content: center;
+}
+#nome {
+    font-size: 4.5em;
+    letter-spacing: 10px;
+    color: var(--fundo-escuro);
+    font-weight: 100;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    width: 70%;
+    justify-self: center;
+    
+}
+
+#subtitulo
+{
+    font-family: var(--fonte-links);
+    font-size: 2.5em;
+    color: var(--letra-clara);
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+#objetivo
+{
+    font-family: var(--fonte-texto);
+    font-size: 1.5em;
+    letter-spacing: 2px;
+    font-weight: 700;
+    color: var(--letra-clara);
+    width: 55%;
+    justify-self: center;
+
+}
+hr
+{
+    width: 60%;
+}
+
+#curriculo
+{
+    margin: 1%;
+    border: black solid 2px;
+    padding: 2%;
+}
+
+p
+{
+    font-family: var(--fonte-texto);
+    font-size: 1.5em;
+    font-weight: 600;
+}
+
+strong
+{
+    font-family:var(--fonte-nome);
+    font-size: .9em;
+    font-weight: 1200;
+}
+
