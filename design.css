@@ -1,32 +1,38 @@
 @import url('https://fonts.googleapis.com/css2?family=Alumni+Sans+Pinstripe:ital@0;1&family=Birthstone&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Poiret+One&display=swap');
 
-:root {
+:root
+{
     --fundo-escuro: #1a1a1a;
     --letra-clara: white;
-    --fundo-claro: rgb(228, 228, 228);
+    --fundo-claro: rgb(200, 200, 200);
     --fundo-cinza: #2C3642;
-    --fundo-azul: #2f80fa;
+    --fundo-azul: #0d418f;
     --letra-escura: black;
     --fonte-nome: "Poiret One", sans-serif;
     --fonte-titulo: "Merriweather", serif;
     --fonte-texto: "Alumni Sans Pinstripe", sans-serif;
-    --fonte-links:"Birthstone", cursive;
+    --fonte-links: "Birthstone", cursive;
 }
 
-html, body, main {
+/* Reset e estrutura base */
+html, body, main
+{
     width: 100%;
     height: 100%;
     margin: 0;
     padding: 0;
 }
 
-main {
+main
+{
     display: flex;
     flex-direction: column;
     margin-top: 50px;
 }
 
-.menu-fixo {
+/* Menu fixo */
+.menu-fixo
+{
     position: fixed;
     top: 0;
     background-color: #212834;
@@ -41,7 +47,8 @@ main {
     padding: 0;
 }
 
-.lista_menu {
+.lista_menu
+{
     list-style: none;
     display: flex;
     flex-wrap: wrap;
@@ -49,118 +56,125 @@ main {
     gap: 20px;
 }
 
-.item {
+.item
+{
     text-decoration: none;
     color: var(--letra-clara);
     cursor: pointer;
     padding: 10px;
     transition: color 0.3s ease-in-out;
+    font-size: 1em;
 }
 
-.item:hover {
-    color: rgba(191, 145, 43);
+.item:hover
+{
+    color: rgb(255, 174, 0);
 }
 
-.lateral {
+/* Barra lateral */
+.lateral
+{
     position: fixed;
     background-color: var(--fundo-cinza);
     width: 21%;
-    height: 100%;
+    height: 100vh;
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
     font-family: var(--fonte-texto);
     letter-spacing: 1px;
     font-size: 1.1em;
-    gap: 10px;
 }
 
-.foto {
+.foto
+{
     width: 100%;
     height: auto;
     display: block;
     margin: 0;
     padding: 0;
+    padding-bottom: 10px;
 }
 
-h1 {
-    color: var(--letra-escura);
-    font-family: var(--fonte-nome);
-    letter-spacing: 4px;
-}
-
-h2 {
-    scroll-margin-top: 80px;
-    font-family: var(--fonte-titulo);
-    margin: 0;
-    padding: 0;
-}
-
-.redes_sociais {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    align-items: center;
-    gap: 10px;
-    width: 100%;
-    padding: 0;
-    margin: 0;
-}
-
-.redes_sociais li {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    
-}
-
-#instagram_logo,
-#linkedin_logo,
-#github_logo {
-    width: 40px;
-    height: 40px;
-    padding: 0;
-    margin: 0;
-}
-
-#links {
-    margin: 0;
-    padding: 0 5% ;
-}
-
-#phone,
-#email,
-#local {
-    display: flex;
-    margin-top: 10px;
-    width: 100%;
-}
-
-.lateral a {
+.lateral a
+{
     text-decoration: none;
     color: var(--letra-clara);
     cursor: pointer;
     transition: color 0.3s ease-in-out;
     align-self: center;
+    font-size: 1.8em;
 }
 
-.lateral a:hover {
+.lateral a:hover
+{
     color: rgba(191, 145, 43);
 }
 
-.texto {
-    padding-left: 21%;
+/* Redes sociais */
+.redes_sociais
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+    list-style: none;
+    padding: 0;
 }
 
-#apresentacao {
+.redes_sociais li
+{
+    list-style: none;
+}
+
+#instagram_logo,
+#linkedin_logo,
+#github_logo
+{
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+}
+
+#instagram_logo:hover,
+#linkedin_logo:hover,
+#github_logo:hover
+{
+    transform: scale(1.1);
+}
+
+/* Links de contato */
+#links
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+}
+
+#phone,
+#email,
+#local
+{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+/* Seção de apresentação */
+#apresentacao
+{
     background-color: var(--fundo-azul);
     display: flex;
-    flex-wrap: wrap;   
+    flex-wrap: wrap;
     justify-content: center;
     padding: 10px;
-    
 }
 
 #principal
@@ -169,9 +183,12 @@ h2 {
     display: inline-block;
     justify-content: center;
 }
-#nome {
-    font-size: 4.5em;
-    letter-spacing: 10px;
+
+#nome
+{
+    font-family: var(--fonte-nome);
+    font-size: clamp(2rem, 4.5vw, 4.5em);
+    letter-spacing: clamp(2px, 1vw, 10px);
     color: var(--fundo-escuro);
     font-weight: 100;
     padding: 0;
@@ -179,33 +196,114 @@ h2 {
     text-align: center;
     width: 70%;
     justify-self: center;
-    
 }
 
 #subtitulo
 {
     font-family: var(--fonte-links);
-    font-size: 2.5em;
+    font-size: clamp(1.2rem, 2.5vw, 2.5em);
     color: var(--letra-clara);
     padding: 0;
     margin: 0;
     text-align: center;
+    font-weight: 100;
 }
 
 #objetivo
 {
     font-family: var(--fonte-texto);
-    font-size: 1.5em;
+    font-size: clamp(0.9rem, 1.2vw, 1.0em);
     letter-spacing: 2px;
     font-weight: 700;
     color: var(--letra-clara);
-    width: 55%;
+    width: clamp(280px, 55%, 800px);
     justify-self: center;
-
+    text-align: center;
+    margin: 0 auto;
 }
+
+/* Conteúdo de texto */
+.texto
+{
+    background-color: var(--fundo-claro);
+    padding-left: 21%;
+    font-family: var(--fonte-texto);
+    font-size: clamp(1.1rem, 1.5vw, 1.5em);
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+/* Títulos */
+h1
+{
+    color: var(--letra-escura);
+    font-family: var(--fonte-nome);
+    letter-spacing: 4px;
+}
+
+h2
+{
+    scroll-margin-top: 80px;
+    font-family: var(--fonte-titulo);
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    font-size: clamp(1.2rem, 2vw, 2em);
+    color: var(--fundo-cinza);
+}
+
+h4
+{
+    font-family: var(--fonte-titulo);
+    font-weight: 100;
+    font-size: clamp(0.7rem, 1vw, 0.8em);
+    text-decoration: underline;
+    padding-left: 20px;
+}
+
+/* Elementos auxiliares */
+.cursivo
+{
+    font-style: italic;
+    color: var(--fundo-azul);
+    margin: 0;
+}
+
+strong
+{
+    font-family: var(--fonte-nome);
+    font-size: 0.85em;
+    font-weight: 1000;
+    letter-spacing: 1.5px;
+    text-decoration: underline;
+}
+
+.data
+{
+    font-family: var(--fonte-nome);
+    font-weight: 900;
+    font-size: 0.8em;
+    text-decoration: solid;
+}
+
+.espaco
+{
+    flex-grow: 0.8;
+}
+
+/* Divisores */
 hr
 {
     width: 60%;
+}
+
+hr.meio
+{
+    border: none;
+    height: 2px;
+    background-color: var(--fundo-azul);
+    width: 60%;
+    margin: 20px auto;
 }
 
 #curriculo
@@ -215,17 +313,213 @@ hr
     padding: 2%;
 }
 
-p
+/* Responsividade para tablets */
+@media (max-width: 1024px)
 {
-    font-family: var(--fonte-texto);
-    font-size: 1.5em;
-    font-weight: 600;
+    .lateral
+    {
+        width: 25%;
+        font-size: 1em;
+        letter-spacing: 0.8px;
+    }
+
+    .texto
+    {
+        padding-left: 25%;
+        font-size: 1.3em;
+    }
+
+    .menu-fixo
+    {
+        letter-spacing: 3px;
+    }
+
+    #nome
+    {
+        letter-spacing: 6px;
+    }
 }
 
-strong
+/* Responsividade para telas menores */
+@media (max-width: 768px)
 {
-    font-family:var(--fonte-nome);
-    font-size: .9em;
-    font-weight: 1200;
+    main
+    {
+        margin-top: 80px;
+    }
+
+    .menu-fixo
+    {
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 10px 5px;
+        letter-spacing: 2px;
+        min-height: 60px;
+    }
+
+    .lista_menu
+    {
+        justify-content: center;
+        gap: 10px;
+        flex-wrap: wrap;
+    }
+
+    .item
+    {
+        font-size: 0.9em;
+        padding: 8px;
+    }
+
+    .lateral
+    {
+        position: relative;
+        width: 100%;
+        height: auto;
+        flex-direction: column;
+        justify-content: flex-start;
+        padding: 20px 0;
+        font-size: 0.9em;
+        letter-spacing: 0.5px;
+        align-items: center;
+    }
+
+    .foto
+    {
+        width: 60%;
+        max-width: 250px;
+        margin-bottom: 20px;
+    }
+
+    .texto
+    {
+        padding-left: 5%;
+        padding-right: 5%;
+        margin-top: 0;
+        width: 90%;
+        text-align: left;
+        font-size: 1.2em;
+    }
+
+    #apresentacao
+    {
+        padding: 20px 10px;
+    }
+
+    #objetivo
+    {
+        width: 90%;
+        font-size: 1em;
+        letter-spacing: 1px;
+    }
+
+    .redes_sociais
+    {
+        gap: 10px;
+        margin-bottom: 15px;
+    }
+
+    #instagram_logo,
+    #linkedin_logo,
+    #github_logo
+    {
+        width: 35px;
+        height: 35px;
+    }
+
+    #links
+    {
+        gap: 8px;
+    }
+
+    .lateral a
+    {
+        font-size: 1.5em;
+    }
+
+    #curriculo
+    {
+        margin: 5px;
+        padding: 10px;
+    }
+
+    hr.meio
+    {
+        width: 80%;
+        margin: 15px auto;
+    }
 }
 
+/* Responsividade para celulares */
+@media (max-width: 480px)
+{
+    main
+    {
+        margin-top: 100px;
+    }
+
+    .menu-fixo
+    {
+        padding: 8px 3px;
+        letter-spacing: 1px;
+    }
+
+    .item
+    {
+        font-size: 0.8em;
+        padding: 6px;
+    }
+
+    .foto
+    {
+        width: 70%;
+        max-width: 200px;
+    }
+
+    .texto
+    {
+        font-size: 1.1em;
+        padding-left: 3%;
+        padding-right: 3%;
+    }
+
+    #apresentacao
+    {
+        padding: 15px 5px;
+    }
+
+    #objetivo
+    {
+        letter-spacing: 0.5px;
+        font-size: 0.95em;
+    }
+
+    #instagram_logo,
+    #linkedin_logo,
+    #github_logo
+    {
+        width: 30px;
+        height: 30px;
+    }
+
+    .lateral a
+    {
+        font-size: 1.3em;
+    }
+
+    h2
+    {
+        font-size: 1.4em;
+    }
+
+    .redes_sociais
+    {
+        margin-bottom: 10px;
+    }
+
+    hr.meio
+    {
+        width: 90%;
+        margin: 12px auto;
+        height: 1px;
+    }
+}
